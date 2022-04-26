@@ -1,0 +1,310 @@
+<?xml version="1.0" ?>
+<robot name="jannat2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find jannat2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find jannat2_description)/urdf/jannat2.trans" />
+<xacro:include filename="$(find jannat2_description)/gazebo/jannat2_materials.gazebo" />
+<xacro:include filename="$(find jannat2_description)/gazebo/jannat2_physics.gazebo" />
+<xacro:include filename="$(find jannat2_description)/gazebo/jannat2_plugins.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.017574895093873062 -0.00034519725312732167 0.4036667435951253"/>
+    <mass value="146.70345944026755"/>
+    <inertia ixx="14.850041" ixy="0.011651" ixz="0.745242" iyy="17.9812" iyz="0.020704" izz="10.595222"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.06249999999999983 0.0"/>
+    <mass value="17.809629848338286"/>
+    <inertia ixx="0.162032" ixy="0.0" ixz="0.0" iyy="0.277686" iyz="0.0" izz="0.162032"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.275 0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.275 0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-5.551115123125783e-17 0.06249999999999983 -1.942890293094024e-16"/>
+    <mass value="17.80962984833829"/>
+    <inertia ixx="0.162032" ixy="-0.0" ixz="-0.0" iyy="0.277686" iyz="-0.0" izz="0.162032"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.275 0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.275 0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.551115123125783e-17 -0.06249999999999983 -1.942890293094024e-16"/>
+    <mass value="17.80962984833829"/>
+    <inertia ixx="0.162032" ixy="-0.0" ixz="0.0" iyy="0.277686" iyz="0.0" izz="0.162032"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.275 -0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.275 -0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -0.06249999999999983 0.0"/>
+    <mass value="17.809629848338286"/>
+    <inertia ixx="0.162032" ixy="0.0" ixz="-0.0" iyy="0.277686" iyz="-0.0" izz="0.162032"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.275 -0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.275 -0.375 -0.175"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.7755575615628914e-17 9.046911093940672e-18 0.012499999999999956"/>
+    <mass value="0.17907078125461814"/>
+    <inertia ixx="8.1e-05" ixy="-0.0" ixz="0.0" iyy="8.1e-05" iyz="0.0" izz="0.000143"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.2 -0.0 -1.0"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/lidar_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.2 -0.0 -1.0"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/lidar_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08294631960323426 0.016743757069865722 -3.3306690738754696e-16"/>
+    <mass value="8.130283561647728"/>
+    <inertia ixx="0.012464" ixy="-0.002895" ixz="0.0" iyy="0.01668" iyz="-0.0" izz="0.022425"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.225 0.125 -0.8125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.225 0.125 -0.8125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.7590942391908513e-07 0.10456827152393106 -0.20010614939134552"/>
+    <mass value="25.34640773380006"/>
+    <inertia ixx="0.691409" ixy="-0.0" ixz="-0.0" iyy="0.668791" iyz="0.022428" izz="0.043324"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.329213 0.035 -0.8125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.329213 0.035 -0.8125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004491712570791617 -0.10294874816607076 0.11752995598761445"/>
+    <mass value="18.290270913362715"/>
+    <inertia ixx="0.245445" ixy="0.001194" ixz="-0.002784" iyy="0.22762" iyz="0.02224" izz="0.032842"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.329213 0.004737 -0.3925"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.329213 0.004737 -0.3925"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_link_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="7.402536805756199e-09 0.04178217358890682 -0.007641319792348722"/>
+    <mass value="2.9409635407212122"/>
+    <inertia ixx="0.003004" ixy="-0.0" ixz="0.0" iyy="0.002438" iyz="0.000185" izz="0.002321"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.335 0.055 -0.6675"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.335 0.055 -0.6675"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/arm_link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.242150880047092e-09 -0.0002958279513090396 -0.06674285851301676"/>
+    <mass value="0.01543570992059533"/>
+    <inertia ixx="3.4e-05" ixy="-0.0" ixz="-0.0" iyy="2.9e-05" iyz="0.0" izz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.335 0.005 -0.6125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.335 0.005 -0.6125"/>
+    <geometry>
+      <mesh filename="package://jannat2_description/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="wheel1_jt" type="continuous">
+  <origin rpy="0 0 0" xyz="0.275 -0.375 0.175"/>
+  <parent link="base_link"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel3_jt" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.275 -0.375 0.175"/>
+  <parent link="base_link"/>
+  <child link="wheel_3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel2_jt" type="continuous">
+  <origin rpy="0 0 0" xyz="0.275 0.375 0.175"/>
+  <parent link="base_link"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel4_jt" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.275 0.375 0.175"/>
+  <parent link="base_link"/>
+  <child link="wheel_4_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.2 0.0 1.0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1_1"/>
+</joint>
+
+<joint name="arm_base_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="0.225 -0.125 0.8125"/>
+  <parent link="base_link"/>
+  <child link="arm_link_1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="armlink12_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="0.104213 0.09 0.0"/>
+  <parent link="arm_link_1_1"/>
+  <child link="arm_link_2_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="armlink23_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.030263 -0.42"/>
+  <parent link="arm_link_2_1"/>
+  <child link="arm_link_3_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="armlink34_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="0.005787 -0.050263 0.275"/>
+  <parent link="arm_link_3_1"/>
+  <child link="arm_link_4_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="gripper_jt" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.05 -0.055"/>
+  <parent link="arm_link_4_1"/>
+  <child link="gripper_link_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+</robot>
